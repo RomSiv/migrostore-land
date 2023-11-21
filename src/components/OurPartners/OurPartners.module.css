@@ -1,0 +1,72 @@
+.container {
+    padding: 180px 0;
+    width: 80vw;
+    max-width: 1200px;
+}
+
+.container h2 {
+    font-size: 40px;
+    font-weight: 500;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E1DBDB;
+}
+
+.image {
+    width: 100%;
+}
+
+.partners {
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+}
+
+.partners::-webkit-skrollbar {
+    width: 0;
+}
+
+.separately_partners {
+    display: none;
+}
+
+@media(max-width: 768px) {
+
+    .container {
+        padding-top: 40px;
+        margin: 0 auto;
+        width: 95vw;
+    }
+
+    .container h2 {
+        font-size: 20px;
+    }
+
+    .partners {
+        display: none;
+    }
+
+    .separately_partners {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 20px;
+        width: 100vw;
+    }
+
+    .personnel {
+        padding-top: 20px;
+        width: 50vw;
+    }
+
+    .accelpoint {
+        width: 60vw;
+    }
+
+    .poland_prize {
+        width: 55vw;
+    }
+
+
+
+}

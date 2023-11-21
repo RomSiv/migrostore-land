@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    border-top: 1px solid #E1DBDB;
+    padding-top: 40px;
+    margin: 0 10px;
+}
+
+@media(max-width: 1473px) {
+    .container {
+        overflow-x: auto;
+    }
+
+    .container::-webkit-skrollbar {
+        width: 0;
+    }
+}
+
+@media(max-width: 768px) {
+    .container {
+        overflow-x: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container img {
+        width: 80vw;
+    }
+
+    .container::-webkit-skrollbar {
+        width: auto;
+    }
+}

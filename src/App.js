@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import MainPage from "./pages/MainPage";
+import ContactPage from "./pages/ContactPage";
+import DownloadsPage from "./pages/DownloadsPage";
+import { Layout } from "./components/Layout/Layout";
+import PrivacyPage from "./pages/PrivacyPage";
+import AgreementConditionsPage from "./pages/AgreementConditionsPage";
+import ScrollToTop from './ScrollToTop'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <ScrollToTop /> */}
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<MainPage />} />
+          <Route path="contact" element={<ContactPage />} />
+          <Route path="downloads" element={<DownloadsPage />} />
+          <Route path="privacy" element={<PrivacyPage />}/>
+          <Route path="agreement" element={<AgreementConditionsPage />}/>
+        </Route>
+      </Routes>
     </div>
   );
 }

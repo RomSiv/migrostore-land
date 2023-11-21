@@ -1,0 +1,23 @@
+.item  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item img {
+    padding-bottom: 30px;
+}
+
+.item p {
+    margin: 0 10px;
+    padding-top: 10px;
+}
+
+.item h3 {
+    margin: 0 10px;
+    padding-top: 30px;
+    font-size: 25px;
+    font-family: "Roboto";
+    font-weight: 500;
+}
+
