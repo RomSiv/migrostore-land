@@ -8,6 +8,7 @@ import PrivacyPage from "./pages/PrivacyPage";
 import AgreementConditionsPage from "./pages/AgreementConditionsPage";
 import ScrollToTop from './ScrollToTop'
 
+
 function App() {
   return (
     <div className="App">

@@ -1,0 +1,42 @@
+.container {
+    padding-bottom: 180px;
+}
+
+.container h3 {
+    font-size: 40px;
+    color: #838383;
+    font-weight: 500;
+}
+
+.container h4 {
+    padding: 60px 0 20px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.container ul {
+    padding-top: 7px;
+    list-style: none;
+}
+
+.container li {
+    font-size: 16px;
+    font-weight: 400;
+    padding-top: 20px;
+}
+
+.first_header {
+    border-bottom: 1px solid #E1DBDB;
+    padding-top: 150px;
+}
+
+.headers {
+    border-bottom: 1px solid #E1DBDB;
+    padding-top: 180px;
+}
+
+.zalacznik {
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}

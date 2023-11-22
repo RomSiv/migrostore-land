@@ -81,7 +81,8 @@ a {
   }
 
   .stores_btn{
-    display: block;
+    display: none;
+    /* display: block; */
     padding-bottom: 20px;
   }
 
@@ -102,6 +103,9 @@ a {
   }
 
   .links {
+
+    display: none;
+
     width: 95vw;
     padding-top: 100px;
     flex-direction: column;
@@ -163,8 +167,8 @@ a {
   }
 
   .container {
-    width: 100vw;
-    padding-top: 30px;
+    width: 95vw;
+    padding: 30px 0 20px;
   }
 }
 

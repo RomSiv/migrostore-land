@@ -7,12 +7,16 @@ import burger_menu from "../../images/BurgerMenu.svg";
 import Footer from "../Footer/Footer";
 import { useState } from "react";
 import DownloadButtons from "../DownloadButtons/DownloadButtons";
+import MobileMenu from "../MobileMenu/MobileMenu";
 
 const Layout = () => {
-  const [menu, setMenu] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const currentImage = menu ? close_menu : burger_menu;
+  const currentImage =  mobileMenuOpen ? close_menu : burger_menu;
 
+  const mobileMenuElem = document.getElementById('mobile_menu')
+
+  const onClose = () => setMobileMenuOpen(false) ? setMobileMenuOpen(true) : setMobileMenuOpen(false)
   return (
     <>
       <div className={s.app}>
@@ -21,8 +25,9 @@ const Layout = () => {
             <img className={s.logo} src={logo} alt="migrostore" />
             <img className={s.smal_logo} src={smal_logo} alt="migro_store" />
           </Link>
-          <div className={menu ? [s.menu, s.active].join(" ") : [s.menu]}>
-            
+          <div 
+          className={s.menu}
+        > 
             <div className={s.links}>
               <Link to="/">
                 <p>Home</p>
@@ -47,7 +52,7 @@ const Layout = () => {
 
           </div>
           <img
-            onClick={() => setMenu(!menu)}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={s.menu_btm}
             src={currentImage}
             alt="menu"
@@ -57,6 +62,7 @@ const Layout = () => {
       <div className={s.container}>
         <Outlet />
         <Footer />
+        {mobileMenuOpen && <MobileMenu />}
       </div>
     </>
   );
