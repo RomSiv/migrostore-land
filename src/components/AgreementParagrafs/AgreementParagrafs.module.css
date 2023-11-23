@@ -40,3 +40,36 @@
     font-size: 20px;
     font-weight: 700;
 }
+
+@media(max-width:768px) {
+
+    .container {
+        padding-bottom: 70px;
+    }
+
+    .first_header {
+        padding-top: 70px;
+    }
+
+    .headers {
+        padding-top: 70px;
+    }
+
+    .container h3 {
+        font-size: 20px;
+    }
+
+    .container h4 {
+        font-size: 20px;
+        padding: 20px 0 10px 0;
+    }
+ 
+    .container ul {
+        padding-top: 7px;
+    }
+
+    .container li {
+        font-size: 13px;
+        padding-top: 13px;
+    }
+}

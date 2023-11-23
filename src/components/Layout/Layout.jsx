@@ -14,17 +14,12 @@ const Layout = () => {
 
   const currentImage =  mobileMenuOpen ? close_menu : burger_menu;
 
-  const mobileMenuElem = document.getElementById('mobile_menu')
-
-  const onClose = () => setMobileMenuOpen(false) ? setMobileMenuOpen(true) : setMobileMenuOpen(false)
   return (
     <>
       <div className={s.app}>
-        <header className={s.header}>
-          <Link to="agreement">
+        <header className={s.header}>  
             <img className={s.logo} src={logo} alt="migrostore" />
             <img className={s.smal_logo} src={smal_logo} alt="migro_store" />
-          </Link>
           <div 
           className={s.menu}
         > 
@@ -35,17 +30,10 @@ const Layout = () => {
               <Link to="contact">
                 <p>Contact us</p>
               </Link>
-              <Link to="privacy">
-                <p className={s.mob_btn}>Privacy policy</p>
-              </Link>
-              <Link to="privacy">
-                <p className={s.mob_btn}>Terms & Conditions</p>
-              </Link>
               <Link to="agreement">
                 <button className={s.dawnload_btn}>Download the app</button>
               </Link>
             </div>
-
             <div className={s.stores_btn}>
               <DownloadButtons />
             </div>
@@ -62,7 +50,7 @@ const Layout = () => {
       <div className={s.container}>
         <Outlet />
         <Footer />
-        {mobileMenuOpen && <MobileMenu />}
+        {mobileMenuOpen && <MobileMenu setMobileMenuOpen={setMobileMenuOpen}/>}
       </div>
     </>
   );

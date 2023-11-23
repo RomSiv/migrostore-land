@@ -14,7 +14,8 @@
 }
 
 .container button {
-    width: 310px;
+    max-width: 310px;
+    width: 80vw;
     background-color: black;
     font-size: 18px;
     color: white;
@@ -27,7 +28,6 @@
 
     .container {
         padding-top: 40px;
-        width: 95vw;
         margin: 0 auto;
     }
 

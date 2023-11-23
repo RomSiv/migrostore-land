@@ -1,8 +1,6 @@
 import React from "react";
 import s from "./LinksForDownload.module.css";
 import world_img from "../../images/world.svg";
-import apple_logo from "../../images/Vector.svg";
-import google_logo from "../../images/Vector-2.svg";
 import DownloadButtons from "../DownloadButtons/DownloadButtons";
 
 

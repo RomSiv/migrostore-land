@@ -51,9 +51,8 @@
 @media(max-width: 768px) {
 
     .footer {
-        padding-top: 0;
-        width: 95vw;
-        margin: auto;
+        padding-top: 15px;
+        width: 85vw;
     }
 
     .container {
@@ -67,6 +66,11 @@
     }
 
     .copyring {
+        padding-bottom: 37px;
+    }
+
+    .copyring p {
         font-size: 10px;
+        font-weight: 400;
     }
 }

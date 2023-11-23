@@ -4,7 +4,6 @@
     gap: 60px;
     border-top: 1px solid #E1DBDB;
     padding-top: 40px;
-    margin: 0 10px;
 }
 
 @media(max-width: 1473px) {
@@ -25,7 +24,7 @@
     }
 
     .container img {
-        width: 80vw;
+        width: 85vw;
     }
 
     .container::-webkit-skrollbar {
