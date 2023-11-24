@@ -22,7 +22,6 @@ export default function MessageForm() {
 
   return (
       <div className={s.container}>
-         <Modal active={modalActive} setActive={setModalAktive}/>
         <img src={logo} alt="migro store" />
         <div>
           <h3>
@@ -47,6 +46,8 @@ export default function MessageForm() {
             <button onClick={() => setModalAktive(true)}>Send message</button>
           </form>
         </div>
+        { modalActive && <Modal />}
+ 
       </div>
   );
 }

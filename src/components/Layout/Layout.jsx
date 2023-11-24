@@ -14,11 +14,13 @@ const Layout = () => {
 
   const currentImage =  mobileMenuOpen ? close_menu : burger_menu;
 
+
   return (
     <>
       <div className={s.app}>
         <header className={s.header}>  
-            <img className={s.logo} src={logo} alt="migrostore" />
+            <img 
+            className={s.logo} src={logo} alt="migrostore" />
             <img className={s.smal_logo} src={smal_logo} alt="migro_store" />
           <div 
           className={s.menu}
@@ -30,7 +32,7 @@ const Layout = () => {
               <Link to="contact">
                 <p>Contact us</p>
               </Link>
-              <Link to="agreement">
+              <Link to="#">
                 <button className={s.dawnload_btn}>Download the app</button>
               </Link>
             </div>

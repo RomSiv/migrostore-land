@@ -46,9 +46,8 @@
     .separately_partners {
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: flex-start;
         gap: 20px;
-        width: 100vw;
     }
 
     .personnel {

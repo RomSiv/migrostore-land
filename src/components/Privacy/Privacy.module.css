@@ -31,6 +31,7 @@
 @media(max-width: 1024px) {
     .container {
         flex-direction: column;
+        padding-top: 30px;
     }
 
     .container img {
@@ -43,7 +44,8 @@
     }
 
     .container div p {
-        width: 90vw;
+        max-width: 600px;
+        width: 80vw;
         text-align: center;
     }
 
@@ -51,19 +53,22 @@
 
 @media(max-width: 768px) {
 
+    .container {
+        padding-top: 70px;
+    }
     .container div{
         gap: 10px
     }
 
     .container div h1 {
         font-size: 25px;
-        width: 95vw;
+        width: 85vw;
         text-align: left;
     }
 
     .container div p {
         font-size: 15px;
-        width: 95vw;
+        width: 85vw;
         text-align: left;
     }
 }
