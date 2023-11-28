@@ -38,40 +38,67 @@
     font-weight: 700;
   }
 
-  @media (max-width: 1305px) {
-    
+  .mobile_btn {
+    display: none;
+  }
+
+
+
+  @media(max-width:1063px) {
     .container_btn {
       flex-direction: column;
     }
   }
 
-  @media(max-width:1024px) {
+  @media (max-width: 768px) {
     .container_btn {
-      gap: 15px;
+      flex-direction: row;
     }
-  
-    .container_btn  div {
-      width: 300px;
-      height: 56px;
-      justify-content: center;
-      align-items: center;
-    }
+
+
+    .mobile_btn {
+    display: block;
   }
 
-  @media (max-width: 768px) {
-    .container {
-      display: flex;
-      flex-direction: column-reverse;
+    .container_btn  div {
+      width: 300px;
+      max-height: 56px;
       justify-content: center;
-      width: 85vw;
-    }
-  
-    .container_btn  div{
-      width: 80vw;
+      align-items: center;
     }
 
     .container_btn {
       padding-top: 25px;
-      gap: 5px;
+      gap: 30px;
     }
+
+    .download {
+      font-weight: 400;
+    }
+
+    .apple_store_btn {
+      display: none;
+    }
+
+    .google_pay_btn {
+      display: none;
+    }
+  }
+
+  @media (max-width:670px) {
+    .container_btn {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+
+
+  @media(max-width:480px) {
+    .mobile_btn {
+      width: 100vw;
+    }
+
+    .container_btn {
+      gap: 30px;
+  }
   }

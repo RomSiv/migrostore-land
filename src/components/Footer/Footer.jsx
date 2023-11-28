@@ -26,15 +26,13 @@ export default function Footer() {
         <div className={s.distruction}>
           <h3>OUR CONTACT</h3>
           <p>
-            <a href="mailto:ram7siv@gmail.com">ram7siv@gmail.com</a>
+            <a href="mailto:ram7siv@gmail.com">d.rabota@migrostore.com</a>
           </p>
           <p>
-            <a href="tel:+48798368136">+48 798 368 136</a>
+            <a href="tel:+48791490146">+48 791 490 146</a>
           </p>
-          <p>
-            <a href="https://www.google.com/maps/place/Orzechowa+95,+50-540+Wroc%C5%82aw/@51.0782144,17.0418675,17z/data=!4m6!3m5!1s0x470fc2f766d0f4bb:0x7fd1e3acf2e3e4c0!8m2!3d51.0782111!4d17.0444424!16s%2Fg%2F11cs79fxbh?entry=ttu">
-              Orzechowa 95, Wroclaw 54-540
-            </a>
+          <p>         
+            ul. Księcia Witolda 49, lok. 15 50-202 Wrocław
           </p>
         </div>
       </div>

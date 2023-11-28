@@ -1,5 +1,5 @@
 .container {
-    width: 80vw;
+    width: 100vw;
     max-width: 1200px;
     padding: 180px 0 180px 0;
     border-bottom: 1px solid #E1DBDB;
@@ -19,20 +19,20 @@
 }
 
 .container_mini img {
-    max-width: 570px;
-    width: 40vw;
+    width: 570px;
 }
 
 .distruction {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 65vw;
+    max-width: 450px;
 }
 
 .about_denis {
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .maria_1280px {
@@ -53,6 +53,7 @@
     margin-top: 20px;
     font-size: 16px;
     max-width: 450px;
+    width: 100%;
 }
 
 .job_title {
@@ -61,77 +62,122 @@
     padding-bottom: 5px;
 }
 
-.denis {
-    margin-right: 180px;
-}
+
 .name {
     font-size: 32px;
     font-weight: 500;
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1099px) {
+.container_mini {
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: space-between; 
+    padding-top: 20px;
+}
 
-    .container_mini img {
-        height: 400px;
-        width: auto;
+.about_denis {
+    flex-direction: column;
+}
+
+.about_maria {
+    flex-direction: column-reverse;
+    padding-top: 0;
+    justify-content: start;
+}
+
+.denis {
+    max-width: 450px;
+    width: 100vw;
+    padding-bottom: 20px;
+}
+
+.maria {
+    max-width: 450px;
+    width: 100vw;
+    padding-bottom: 20px;
+}  
+
+.distruction {
+        max-width: 450px;
     }
+}
 
-    .about_denis {
-        flex-direction: column;
-        align-items: center;
+@media(max-width:1040px) {
+    .denis {
+        max-width: 400px;
     }
-
+    
+    .maria {
+        max-width: 400px;
+    }
 
     .distruction {
-        align-items: center;
+        max-width: 400px;
     }
+}
 
-
-    .about_maria {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .maria_1280px {
-        display: block;
-        padding: 20px 0;
-        overflow-x: auto;
-    } 
-
-    .maria {
-        display: none;
-    }
-
-    .denis_1280px {
-        display: block;
-        overflow-x: auto;
-    }
-
+@media(max-width:940px) {
     .denis {
-        display: none;
+        max-width: 350px;
+    }
+    
+    .maria {
+        max-width: 350px;
+    }
+
+    .distruction {
+        max-width: 350px;
     }
 }
 
 @media(max-width: 768px) {
 
     .container {
-        width: 85vw;
         padding-bottom: 80px;
     }
 
-    .container h2 {
-        font-size: 20px;
-        margin-left: 10px;
-    }
-    
-    .container_mini img {
-        width: 75vw;
-        height: auto;
-    }
-
-    .about {
-        max-width: 80vw;
+    .container_mini {
+        width: 100vw;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        overflow-x: auto;
+        gap: 20px;
     }
 }
 
+@media(max-width: 480px) {
+
+    .container h2 {
+        font-size: 20px;
+    }
+    
+    .denis {
+        max-width: 250px;
+    }
+    
+    .maria {
+        max-width: 250px;
+    }
+
+    .distruction {
+        max-width: 250px;
+    }
+
+    .job_title {
+        font-size: 15px;
+    }
+
+    .name {
+        font-size: 23px;
+    }
+
+    .about {
+        margin-top: 10px;
+        font-size: 13px;
+        line-height: 15.23px;
+    }
+}

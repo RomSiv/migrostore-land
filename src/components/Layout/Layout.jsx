@@ -18,7 +18,8 @@ const Layout = () => {
   return (
     <>
       <div className={s.app}>
-        <header className={s.header}>  
+        <header className={s.header}>
+          <div className={s.header_content}>
             <img 
             className={s.logo} src={logo} alt="migrostore" />
             <img className={s.smal_logo} src={smal_logo} alt="migro_store" />
@@ -47,6 +48,7 @@ const Layout = () => {
             src={currentImage}
             alt="menu"
           />
+          </div>
         </header>
       </div>
       <div className={s.container}>

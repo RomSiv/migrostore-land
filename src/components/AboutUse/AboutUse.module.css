@@ -5,7 +5,7 @@
 }
 
 
-@media(max-width: 768px) {
+@media(max-width: 480px) {
     .container h2 {
         font-size: 20px;
     }

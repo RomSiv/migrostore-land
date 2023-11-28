@@ -10,10 +10,6 @@ export default function OurPartners() {
     <div className={s.container}>
       <h2>OUR PARTNERS</h2>
       <div className={s.partners}>
-        <img className={s.image} src={partners} alt="partners" />
-      </div>
-
-      <div className={s.separately_partners}>
         <img className={s.personnel} src={personnel} alt="personnel" />
         <img className={s.accelpoint} src={accelpoint} alt="accelpoint" />
         <img className={s.poland_prize} src={poland_prize} alt="poland_prize" />
