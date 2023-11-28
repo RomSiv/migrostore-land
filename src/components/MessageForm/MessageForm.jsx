@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import s from "./MessageForm.module.css";
-import logo from "../../images/image11.svg";
+import logo from "../../images/contakt_us_form.svg";
 import Modal from "../Modal/Modal";
 
 export default function MessageForm() {
@@ -22,7 +22,7 @@ export default function MessageForm() {
 
   return (
       <div className={s.container}>
-        <img src={logo} alt="migro store" />
+        <img src='https://migrostore.pl/build/assets/contact_image.2b603a35.svg' alt="migro store" />
         <div>
           <h3>
             Feel free to contact us any time. We wiil get back contact to you as
@@ -32,16 +32,13 @@ export default function MessageForm() {
            onSubmit={submit}
            >
             <div>
-              <p>Name</p>
-              <input type="text" placeholder="Your name" name="name" />
+              <input type="text" placeholder="Name" name="name" />
             </div>
             <div>
-              <p>Email</p>
-              <input type="text" placeholder="Your email" name="email" />
+              <input type="text" placeholder="Email" name="email" />
             </div>
             <div>
-              <p>Message</p>
-              <input type="text" placeholder="Your message" name="message" />
+              <input type="text" placeholder="Message" name="message" />
             </div>
             <button onClick={() => setModalAktive(true)}>Send message</button>
           </form>
