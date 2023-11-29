@@ -3,6 +3,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 20px;
+  width: calc(100% - 40px);
+  max-width: 1200px;
 }
 
 .container > div {
@@ -14,7 +17,7 @@
   width: 100%;
 }
 
-.container  h3 {
+.container h3 {
   font-size: 20px;
   font-weight: 400;
 }
@@ -57,8 +60,7 @@
   font-size: 14px;
 }
 
-
-@media(max-width:1024px) {
+@media (max-width: 1024px) {
   .container {
     padding-top: 199;
     gap: 20px;
@@ -68,13 +70,12 @@
 
   .container img {
     width: 80vw;
-  } 
-
+  }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .container {
-    padding: 108px 0 70px 0;
+    padding: 50px 0 70px 0;
   }
 
   .container img {
@@ -86,7 +87,9 @@
     max-width: 100%;
     width: 100vw;
   }
+}
 
+@media (max-width: 480px) {
   .container h3 {
     font-size: 15px;
   }

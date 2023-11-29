@@ -6,7 +6,6 @@ import DownloadButtons from "../DownloadButtons/DownloadButtons";
 export default function LinksForDownload() {
   return (
     <div className={s.container}>
-      
       <div className={s.header_max_width_1063px}>
         <h2>Migrostore - one store shop platform for Ukrainians in Poland.</h2>
       </div>
@@ -18,7 +17,6 @@ export default function LinksForDownload() {
         <img className={s.image_1063px} src={world_img} alt="migrostore" />
         <DownloadButtons />
       </div>
-
       <img className={s.image_1440px} src={world_img} alt="migrostore" />
     </div>
   );

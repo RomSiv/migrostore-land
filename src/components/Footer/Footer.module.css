@@ -1,7 +1,9 @@
 .footer {
     padding-top: 31px;
-    width: 100vw;
+    width: 100%;
     max-width: 1200px;
+    width: calc(100% - 40px);
+    margin: 0 20px;
     border-top: 1px solid #E1DBDB;
 }
 
@@ -38,7 +40,7 @@
     border-top: 1px solid #E1DBDB;
     display: flex;
     justify-content: flex-end;
-    padding-bottom: 108px;
+    padding-bottom: 50px;
 }
 
 .copyring  p {
@@ -52,7 +54,6 @@
 
     .footer {
         padding-top: 15px;
-        width: 100vw;
     }
 
     .container {
