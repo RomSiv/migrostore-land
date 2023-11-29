@@ -3,7 +3,6 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    align-items: center;
     gap: 30px;
   }
 
@@ -97,8 +96,4 @@
     .mobile_btn {
       width: 100vw;
     }
-
-    .container_btn {
-      gap: 30px;
-  }
   }
