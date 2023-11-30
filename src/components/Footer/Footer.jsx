@@ -3,11 +3,20 @@ import s from "./Footer.module.css";
 import logo from "../../images/migro_store_logo.svg";
 import { Link } from "react-router-dom";
 
+const scrollUp = () => {
+  window.scrollTo({
+    top:0,
+    behavior: 'smooth'
+  })
+}
+
 export default function Footer() {
   return (
     <div className={s.footer}>
       <div className={s.container}>
-        <img src={logo} alt="migro store." />
+        <img 
+        onClick={scrollUp}
+        src={logo} alt="migro store." />
         <div className={s.distruction}>
           <h3>OUR COMPANY</h3>
           <Link to="/">

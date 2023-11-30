@@ -1,50 +1,85 @@
 import React, { useState } from "react";
 import s from "./MessageForm.module.css";
-import logo from "../../images/contakt_us_form.svg";
+import logo from "../../images/Illustration.svg";
 import Modal from "../Modal/Modal";
+import { useForm } from "react-hook-form";
 
 export default function MessageForm() {
+  const {
+    register,
+    formState: { errors, isValid },
+    handleSubmit,
+  } = useForm({ mode: "onSubmit" });
 
   const [modalActive, setModalAktive] = useState(false);
 
-  const submit = (e) => {
-    e.preventDefault();
-    const { name, email, message } = e.target;
-    const new_message = {
-      id: Date.now(),
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    };
-    console.log(new_message);
-    e.target.reset();
+  const submit = (data) => {
+    console.log(data);
   };
 
   return (
-      <div className={s.container}>
-        <img src='https://migrostore.pl/build/assets/contact_image.2b603a35.svg' alt="migro store" />
-        <div>
-          <h3>
-            Feel free to contact us any time. We wiil get back contact to you as
-            soon as we can!
-          </h3>
-          <form
-           onSubmit={submit}
-           >
-            <div>
-              <input type="text" placeholder="Name" name="name" />
+    <div className={s.container}>
+      <img
+        src={logo}
+        alt="migro store"
+      />
+      <div>
+        <h3>
+          Feel free to contact us any time. We wiil get back contact to you as
+          soon as we can!
+        </h3>
+        <form onSubmit={handleSubmit(submit)}>
+          <label className={s.input}>
+            <input
+            type="text"
+              {...register("name", {
+                required: "Required field",
+              })}
+            />
+
+            <span className={s.placeholder}>Name</span>
+            <div className={s.errors}>
+              {errors?.name && <p>{errors?.name?.message || "Error!"}</p>}
             </div>
-            <div>
-              <input type="text" placeholder="Email" name="email" />
+          </label>
+
+          <label className={s.input}>
+            <input
+              {...register("email", {
+                required: "Required field",
+                minLength: {
+                  value: 3,
+                  message: "Invalid email format",
+                },
+              })}
+            />
+            <span className={s.placeholder}>Email</span>
+            <div className={s.errors}>
+              {errors?.name && <p>{errors?.name?.message || "Error!"}</p>}
             </div>
-            <div>
-              <input type="text" placeholder="Message" name="message" />
+          </label>
+
+          <label className={s.input}>
+            <input
+              {...register("message", {
+                required: "Required field",
+              })}
+            />
+            <span className={s.placeholder}>Massage</span>
+            <div className={s.errors}>
+              {errors?.name && <p>{errors?.name?.message || "Error!"}</p>}
             </div>
-            <button onClick={() => setModalAktive(true)}>Send message</button>
-          </form>
-        </div>
-        { modalActive && <Modal />}
- 
+          </label>
+
+          <button
+            type="submit"
+            onClick={() => (isValid ? setModalAktive(true) : "")}
+          >
+            Send message
+          </button>
+        </form>
       </div>
+      {modalActive && <Modal />}
+    </div>
   );
 }

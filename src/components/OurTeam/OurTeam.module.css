@@ -151,7 +151,22 @@
     overflow-x: auto;
     gap: 20px;
   }
+
+  .container_mini::-webkit-scrollbar {
+    height: 7px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: -5px;
+
+ }
+
+::-webkit-scrollbar-thumb {
+  width: 5px;
+  background-color: #757171;
+  border-radius: 25px;
 }
+}
+
 
 @media (max-width: 480px) {
   .container h2 {

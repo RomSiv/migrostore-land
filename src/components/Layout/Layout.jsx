@@ -8,8 +8,10 @@ import Footer from "../Footer/Footer";
 import { useState } from "react";
 import DownloadButtons from "../DownloadButtons/DownloadButtons";
 import MobileMenu from "../MobileMenu/MobileMenu";
+import { isMobile, isBrowser, OS } from 'react-device-detect'
 
 const Layout = () => {
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const currentImage = mobileMenuOpen ? close_menu : burger_menu;
@@ -32,7 +34,8 @@ const Layout = () => {
                   <p>Contact us</p>
                 </Link>
                 <Link to="#">
-                  <button className={s.dawnload_btn}>Download the app</button>
+                  <button
+                  className={s.dawnload_btn}>Download the app</button>
                 </Link>
               </div>
               <div className={s.stores_btn}>

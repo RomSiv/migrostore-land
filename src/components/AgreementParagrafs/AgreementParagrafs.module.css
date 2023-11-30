@@ -1,75 +1,80 @@
 .container {
-    padding-bottom: 180px;
+  padding-bottom: 180px;
+  margin: 0 20px;
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  height: max-content;
 }
 
 .container h3 {
-    font-size: 40px;
-    color: #838383;
-    font-weight: 500;
+  font-size: 40px;
+  color: #838383;
+  font-weight: 500;
 }
 
 .container h4 {
-    padding: 60px 0 20px;
-    font-size: 40px;
-    font-weight: 500;
+  padding: 60px 0 20px;
+  font-size: 40px;
+  font-weight: 500;
 }
 
 .container ul {
-    padding-top: 7px;
-    list-style: none;
+  padding-top: 7px;
+  list-style: none;
 }
 
 .container li {
-    font-size: 16px;
-    font-weight: 400;
-    padding-top: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  padding-top: 20px;
 }
 
 .first_header {
-    border-bottom: 1px solid #E1DBDB;
-    padding-top: 150px;
+  border-bottom: 1px solid #e1dbdb;
+  padding-top: 150px;
 }
 
 .headers {
-    border-bottom: 1px solid #E1DBDB;
-    padding-top: 180px;
+  border-bottom: 1px solid #e1dbdb;
+  padding-top: 180px;
 }
 
 .zalacznik {
-    padding-top: 20px;
-    font-size: 20px;
-    font-weight: 700;
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
+  .container {
+    padding-bottom: 70px;
+  }
 
-    .container {
-        padding-bottom: 70px;
-    }
+  .first_header {
+    padding-top: 70px;
+  }
 
-    .first_header {
-        padding-top: 70px;
-    }
+  .headers {
+    padding-top: 70px;
+  }
+}
 
-    .headers {
-        padding-top: 70px;
-    }
+@media (max-width: 480px) {
+  .container h3 {
+    font-size: 20px;
+  }
 
-    .container h3 {
-        font-size: 20px;
-    }
-
-    .container h4 {
-        font-size: 20px;
-        padding: 20px 0 10px 0;
-    }
+  .container h4 {
+    font-size: 20px;
+    padding: 20px 0 10px 0;
+  }
  
-    .container ul {
-        padding-top: 7px;
-    }
+  .container ul {
+    padding-top: 7px;
+  }
 
-    .container li {
-        font-size: 13px;
-        padding-top: 13px;
-    }
+  .container li {
+    font-size: 13px;
+    padding-top: 13px;
+  }
 }

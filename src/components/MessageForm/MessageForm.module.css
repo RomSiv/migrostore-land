@@ -20,20 +20,58 @@
 .container h3 {
   font-size: 20px;
   font-weight: 400;
+  margin-bottom: 40px;
 }
 
 .container form {
-  padding: 40px 0;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.container form > div {
+
+.input {
+  margin-top: 30px;
   border-bottom: 1px solid #838383;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: relative;
+}
+
+
+.input input {
+  position: absolute;
+  max-width: 570px;
+  width: 100%;
+  background-color: transparent;
+  top: -26px;
+}
+
+.input input:focus + span
+/* .input input:valid + span  */
+{
+  top: -45px;
+  font-size: 12px;
+}
+
+.placeholder {
+  color: #838383;
+  position: absolute;
+  top: -22px;
+  transition: 0.2s;
+  cursor: text;
+}
+
+.errors {
+  color: #f00d0d;
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+
+.text_error {
+  font-size: 13px;
 }
 
 .container input {
