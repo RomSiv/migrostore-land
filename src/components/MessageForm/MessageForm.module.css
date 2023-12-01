@@ -29,7 +29,6 @@
   gap: 30px;
 }
 
-
 .input {
   margin-top: 30px;
   border-bottom: 1px solid #838383;
@@ -39,20 +38,12 @@
   position: relative;
 }
 
-
 .input input {
   position: absolute;
   max-width: 570px;
   width: 100%;
   background-color: transparent;
   top: -26px;
-}
-
-.input input:focus + span
-/* .input input:valid + span  */
-{
-  top: -45px;
-  font-size: 12px;
 }
 
 .placeholder {
@@ -63,11 +54,24 @@
   cursor: text;
 }
 
-.errors {
+input:focus + span
+/* ,input:valid + span  */
+{
+  top: -45px;
+  font-size: 12px;
+}
+
+.error {
   color: #f00d0d;
+  border-top:1px solid #f00d0d;
   position: absolute;
-  top: 5px;
+  max-width: 100%;
+  width: 100vw;
+  justify-content: end;
+  display: flex;
+  top: 0;
   right: 0;
+  z-index: 10;
 }
 
 .text_error {

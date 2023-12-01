@@ -5,17 +5,30 @@ import Modal from "../Modal/Modal";
 import { useForm } from "react-hook-form";
 
 export default function MessageForm() {
-  const {
-    register,
-    formState: { errors, isValid },
-    handleSubmit,
-  } = useForm({ mode: "onSubmit" });
+  
+ const [modalActive, setModalAktive] = useState(false);
 
-  const [modalActive, setModalAktive] = useState(false);
+ const { register, handleSubmit, reset, formState: {errors, isValid} } = useForm()
+ 
+ const nameRegister = register( 'name', {
+  required: 'Required field'
+ } )
 
-  const submit = (data) => {
-    console.log(data);
-  };
+ const emailRegister = register( 'email', {
+  required: 'Required field',
+  pattern: {
+    value: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/,
+    message: 'Invalid email format'
+  }
+ } )
+
+ const messageRegister = register( 'message', {
+  required: 'Required field'
+ } )
+
+const submit = data => {console.log(data);
+reset()
+}
 
   return (
     <div className={s.container}>
@@ -30,49 +43,36 @@ export default function MessageForm() {
         </h3>
         <form onSubmit={handleSubmit(submit)}>
           <label className={s.input}>
-            <input
-            type="text"
-              {...register("name", {
-                required: "Required field",
-              })}
+            <input className={s.test}
+            {...nameRegister}                     
             />
-
+            {errors.name && <p className={s.error}>{errors.name.message}</p>} 
             <span className={s.placeholder}>Name</span>
             <div className={s.errors}>
-              {errors?.name && <p>{errors?.name?.message || "Error!"}</p>}
             </div>
           </label>
 
           <label className={s.input}>
             <input
-              {...register("email", {
-                required: "Required field",
-                minLength: {
-                  value: 3,
-                  message: "Invalid email format",
-                },
-              })}
+            {...emailRegister}
             />
+            {errors.email && <p className={s.error}>{errors.email.message}</p>}
             <span className={s.placeholder}>Email</span>
             <div className={s.errors}>
-              {errors?.name && <p>{errors?.name?.message || "Error!"}</p>}
             </div>
           </label>
 
           <label className={s.input}>
             <input
-              {...register("message", {
-                required: "Required field",
-              })}
+            {...messageRegister}
             />
-            <span className={s.placeholder}>Massage</span>
+            {errors.message && <p className={s.error}>{errors.message.message}</p>}
+            <span className={s.placeholder}>Message</span>
             <div className={s.errors}>
-              {errors?.name && <p>{errors?.name?.message || "Error!"}</p>}
             </div>
           </label>
 
           <button
-            type="submit"
             onClick={() => (isValid ? setModalAktive(true) : "")}
           >
             Send message

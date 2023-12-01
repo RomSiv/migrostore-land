@@ -144,7 +144,7 @@
 
   .container_mini {
     width: 100%;
-    margin-top: 20px;
+    margin: 20px 0 3px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -152,17 +152,15 @@
     gap: 20px;
   }
 
-  .container_mini::-webkit-scrollbar {
-    height: 7px;
+ ::-webkit-scrollbar {
+    height: 3px;
     background-color: #ffffff;
-    position: absolute;
     bottom: -5px;
-
  }
 
 ::-webkit-scrollbar-thumb {
-  width: 5px;
-  background-color: #757171;
+  width: 2px;
+  background-color: #a39c9c;
   border-radius: 25px;
 }
 }
