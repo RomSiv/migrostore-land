@@ -4,13 +4,15 @@ import AboutUse from '../components/AboutUse/AboutUse'
 import OurTeam from '../components/OurTeam/OurTeam'
 import ContactUs from '../components/ContactUs/ContactUs'
 import OurPartners from '../components/OurPartners/OurPartners'
+import OurTeamContainer from '../components/OurTeamContainer/OurTeamContainer'
 
 export default function MainPage() {
   return (
     <div>
       <LinksForDownload />
       <AboutUse />
-      <OurTeam />
+      {/* <OurTeam /> */}
+      <OurTeamContainer />
       <ContactUs />
       <OurPartners />
     </div>
