@@ -42,6 +42,7 @@ reset()
           soon as we can!
         </h3>
         <form onSubmit={handleSubmit(submit)}>
+          
           <label className={s.input}>
             <input className={s.test}
             {...nameRegister}                     
