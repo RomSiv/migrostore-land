@@ -8,7 +8,6 @@ import Footer from "../Footer/Footer";
 import { useState } from "react";
 import DownloadButtons from "../DownloadButtons/DownloadButtons";
 import MobileMenu from "../MobileMenu/MobileMenu";
-import { isMobile, isBrowser, OS } from 'react-device-detect'
 
 const Layout = () => {
 

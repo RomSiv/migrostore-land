@@ -1,7 +1,6 @@
 import React from 'react'
 import LinksForDownload from '../components/LinksForDownload/LinksForDownload'
 import AboutUse from '../components/AboutUse/AboutUse'
-import OurTeam from '../components/OurTeam/OurTeam'
 import ContactUs from '../components/ContactUs/ContactUs'
 import OurPartners from '../components/OurPartners/OurPartners'
 import OurTeamContainer from '../components/OurTeamContainer/OurTeamContainer'
@@ -11,7 +10,6 @@ export default function MainPage() {
     <div>
       <LinksForDownload />
       <AboutUse />
-      {/* <OurTeam /> */}
       <OurTeamContainer />
       <ContactUs />
       <OurPartners />
