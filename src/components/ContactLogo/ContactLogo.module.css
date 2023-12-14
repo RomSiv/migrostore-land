@@ -1,0 +1,21 @@
+.container img {
+  max-width: 401px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 50px;
+  }
+
+  .container img {
+    max-width: 100%;
+    width: 100vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-top: 20px;
+  }
+}

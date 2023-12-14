@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 
 export default function MessageForm() {
   
- const [modalActive, setModalAktive] = useState(false);
+ const [modalActive, setModalActive] = useState(false);
 
  const { register, handleSubmit, reset, formState: {errors, isValid} } = useForm()
  
@@ -34,7 +34,7 @@ reset()
     <div className={s.container}>
       <img
         src={logo}
-        alt="migro store"
+        alt="migrostore"
       />
       <div>
         <h3>
@@ -49,8 +49,8 @@ reset()
             />
             {errors.name && <p className={s.error}>{errors.name.message}</p>} 
             <span className={s.placeholder}>Name</span>
-            <div className={s.errors}>
-            </div>
+            <div className={s.errors}></div>
+            
           </label>
 
           <label className={s.input}>
@@ -74,7 +74,7 @@ reset()
           </label>
 
           <button
-            onClick={() => (isValid ? setModalAktive(true) : "")}
+            onClick={() => (isValid ? setModalActive(true) : "")}
           >
             Send message
           </button>

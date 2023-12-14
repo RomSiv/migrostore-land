@@ -99,6 +99,11 @@ a {
 
 
 @media (max-width: 768px) {
+
+  .container {
+    padding-top: 100px;
+  }
+
   .menu_btm {
     display: block;
   }
@@ -124,8 +129,11 @@ a {
     display: none;
     }
 
-  .header_content {
+  .header {
     padding-top: 30px;
+    }
+  
+    .header_content {
     height: 75px;
     max-width: 768px;
     width: calc(100% - 40px);

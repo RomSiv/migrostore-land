@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCfQq9BSeh9tDZa1Xd6J3izEHJYMeN8lbA",
-  authDomain: "test-project-fc67f.firebaseapp.com",
-  projectId: "test-project-fc67f",
-  storageBucket: "test-project-fc67f.appspot.com",
-  messagingSenderId: "579241006251",
-  appId: "1:579241006251:web:c8cb3e0ad93ba6c297d3ee"
+  apiKey: "AIzaSyD21Y9YaxWfS4jMqAC4BEiejaN6n-FoyRY",
+  authDomain: "message-migrostore.firebaseapp.com",
+  projectId: "message-migrostore",
+  storageBucket: "message-migrostore.appspot.com",
+  messagingSenderId: "433931934810",
+  appId: "1:433931934810:web:953c3f3eee6f16786a4c63"
 };
 
 const app = initializeApp(firebaseConfig);
-export default getFirestore()
+export const db = getFirestore(app)
