@@ -43,16 +43,20 @@ export default function ContactForm() {
   };
 
   const blurHandle = (e) => {
-    switch (e.target.name) {
-      case "name":
-        setNameDitry(true);
-        break
-      case "email":
-        setEmailDitry(true);
-        break
-      case "message":
-        setMessageDitry(true);
-        break
+    if(!formData.name) {
+      setNameDitry(true)
+    }else {
+      setNameDitry(false)
+    }
+    if(!formData.email) {
+      setEmailDitry(true)
+    }else {
+      setEmailDitry(false)
+    }
+    if(!formData.message) {
+      setMessageDitry(true)
+    }else {
+      setMessageDitry(false)
     }
   };
 
@@ -118,7 +122,7 @@ export default function ContactForm() {
         </label>
 
         <button
-          onClick={() => (!errors ? setModalActive(true) : "")}
+          onClick={() => (!errors.errorName ? setModalActive(true) : "")}
           type="submit"
         >
           Submit
