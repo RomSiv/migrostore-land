@@ -3,27 +3,68 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../config/firebase-config";
 import s from "./ContactForm.module.css";
 import Modal from "../Modal/Modal";
-import { contactValidation } from "../Validation";
 
 export default function ContactForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const [errors, setErrors] = useState({});
+  const [ nameDitry, setNameDitry ] = useState(false);
+  const [ emailDitry, setEmailDitry ] = useState(false);
+  const [ messageDitry, setMessageDitry ] = useState(false)
+
+  const [errors, setErrors] = useState({
+    errorName: "Required field",
+    errorEmail: "Required field",
+    errorMessage: "Required field",
+  });
+
   const [modalActive, setModalActive] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) {
+      return;
+    }
     const contactCollectionRef = collection(db, "contacts");
-    addDoc(contactCollectionRef, {
-      name: name,
-      email: email,
-      message: message
-    });
-    const isValid = await contactValidation.isValid('')
-    console.log(isValid);
+
+    try {
+      const docRef = await addDoc(contactCollectionRef, {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      });
+
+    } catch (error) {
+      console.error("не отправлено:", error);
+    }
   };
+
+  const blurHandle = (e) => {
+    switch (e.target.name) {
+      case "name":
+        setNameDitry(true);
+        break
+      case "email":
+        setEmailDitry(true);
+        break
+      case "message":
+        setMessageDitry(true);
+        break
+    }
+  };
+
+  // const emailHandler = (e) => {
+  //   setFormData.email(e.target.value)
+  //   const testEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  //  if(!testEmail.test(String(e.target.value).toLowerCase())) {
+  //   setErrors.errorEmail('Invalid email format')
+  //  }else{
+  //   setErrors.errorEmail('')
+  //  }
+  // }
 
   return (
     <div className={s.container}>
@@ -36,33 +77,44 @@ export default function ContactForm() {
           <input
             type="text"
             name="name"
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            onBlur={e => blurHandle(e)}
           />
           <span className={s.placeholder}>Name</span>
 
-          {/* <div className={s.errors}></div> */}
+          {(nameDitry && errors.errorName) && 
+            <div className={s.errors}>{errors.errorName}</div>
+          }
         </label>
 
         <label className={s.input}>
           <input
             type="text"
             name="email"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+
+            // onChange={(e) => {
+            //   setFormData({ ...formData, email: e.target.value });
+            //   emailHandler(e);
+            // }}
+            
+            onBlur={e => blurHandle(e)}
           />
           <span className={s.placeholder}>Email</span>
-
-          {/* <div className={s.errors}></div> */}
+          {(emailDitry && errors.errorEmail) &&  <div className={s.errors}>{errors.errorEmail}</div>}
         </label>
 
         <label className={s.input}>
           <input
             type="text"
             name="message"
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            onBlur={e => blurHandle(e)}
           />
           <span className={s.placeholder}>Message</span>
-
-          {/* <div className={s.errors}></div> */}
+          {(messageDitry && errors.errorMessage) && 
+            <div className={s.errors}>{errors.errorMessage}</div>
+          }
         </label>
 
         <button
@@ -72,7 +124,7 @@ export default function ContactForm() {
           Submit
         </button>
       </form>
-      {/* {modalActive && <Modal />} */}
+      {modalActive && <Modal />}
     </div>
   );
 }

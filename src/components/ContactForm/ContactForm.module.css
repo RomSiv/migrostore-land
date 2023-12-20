@@ -69,6 +69,23 @@
     font-size: 12px;
   }
 
+  .errors {
+    color: #f00d0d;
+    border-top:1px solid #f00d0d;
+    position: absolute;
+    max-width: 100%;
+    width: 100vw;
+    justify-content: end;
+    display: flex;
+    top: 0;
+    right: 0;
+    z-index: 10;
+  }
+  
+  .text_error {
+    font-size: 13px;
+  }
+
   @media (max-width: 1024px) {
     .container {
         margin-top: 25px;
