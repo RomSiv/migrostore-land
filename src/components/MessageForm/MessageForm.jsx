@@ -3,6 +3,8 @@ import s from "./MessageForm.module.css";
 import logo from "../../images/Illustration.svg";
 import Modal from "../Modal/Modal";
 import { useForm } from "react-hook-form";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../config/firebase-config";
 
 export default function MessageForm() {
   
@@ -26,9 +28,21 @@ export default function MessageForm() {
   required: 'Required field'
  } )
 
-const submit = data => {console.log(data);
+
+const submit = async(data) => {
+  const { name, email, message } = data;
+if (!name || !email || !message) {
+  return;
+}
+  const contactCollectionRef = collection(db, "contacts")
+    const docRef = await addDoc(contactCollectionRef, {
+      name: name,
+      email: email,
+      message: message,
+    });
 reset()
 }
+
 
   return (
     <div className={s.container}>

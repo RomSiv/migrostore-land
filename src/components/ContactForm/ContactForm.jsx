@@ -29,7 +29,6 @@ export default function ContactForm() {
       return;
     }
     const contactCollectionRef = collection(db, "contacts");
-
     try {
       const docRef = await addDoc(contactCollectionRef, {
         name: formData.name,
@@ -113,7 +112,7 @@ export default function ContactForm() {
             type="text"
             name="message"
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            onBlur={e => blurHandle(e)}
+            onClick={e => blurHandle(e)}
           />
           <span className={s.placeholder}>Message</span>
           {(messageDitry && errors.errorMessage) && 
